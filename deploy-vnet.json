@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "VnetName": {
+            "type": "string",
+            "defaultValue": "VNet-001",
+            "metadata": {
+                "description": "Nom du VNet à créer"
+            }
+        },
+        "OwnerName": {
+            "type": "string",
+            "defaultValue": "NetStack",
+            "metadata": {
+                "description": "Nom de l'organisation responsable de la ressource"
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2018-10-01",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('VnetName')]",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "Owner": "[parameters('OwnerName')]"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "enableVmProtection": false,
+                "enableDdosProtection": false,
+                "subnets": [
+                    {
+                        "name": "subnet001",
+                        "properties": {
+                            "addressPrefix": "10.0.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "subnet002",
+                        "properties": {
+                            "addressPrefix": "10.0.1.0/24"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
