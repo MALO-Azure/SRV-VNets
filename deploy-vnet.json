@@ -6,14 +6,14 @@
             "type": "string",
             "defaultValue": "VNet-001",
             "metadata": {
-                "description": "Nom du VNet à créer"
+                "description": "Nom du VNet à créer."
             }
         },
         "OwnerName": {
             "type": "string",
             "defaultValue": "NetStack",
             "metadata": {
-                "description": "Nom de l'organisation responsable de la ressource"
+                "description": "Nom de l'organisation responsable de la ressource."
             }
         }
     },
