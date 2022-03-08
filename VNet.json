@@ -4,9 +4,9 @@
     "parameters": {
         "VnetName": {
             "type": "string",
-            "defaultValue": "VNet-001",
+            "defaultValue": "logistic-network",
             "metadata": {
-                "description": "Nom du VNet à créer."
+                "description": "Nom du VNet de la logistique."
             }
         },
         "OwnerName": {
@@ -30,20 +30,20 @@
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
-                        "10.0.0.0/16"
+                        "10.0.0.2/16"
                     ]
                 },
                 "enableVmProtection": false,
                 "enableDdosProtection": false,
                 "subnets": [
                     {
-                        "name": "subnet001",
+                        "name": "logistic-network-subnet1",
                         "properties": {
                             "addressPrefix": "10.0.0.0/24"
                         }
                     },
                     {
-                        "name": "subnet002",
+                        "name": "logistic-network-subnet2",
                         "properties": {
                             "addressPrefix": "10.0.1.0/24"
                         }
