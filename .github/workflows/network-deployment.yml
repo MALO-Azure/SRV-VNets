@@ -1,5 +1,7 @@
 name: Deploy ARM Template
 
+# TEST
+
 on:
   push:
     branches:
