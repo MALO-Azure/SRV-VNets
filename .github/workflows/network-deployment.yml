@@ -3,7 +3,7 @@ name: Deploy ARM Template
 # TEST
 
 on:
-  push:
+  delete:
     branches:
       - main
 env:
